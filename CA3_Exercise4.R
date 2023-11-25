@@ -91,3 +91,18 @@ se <- sqrt(diag(hessian))
 
 # Report the standard errors
 cat("Standard Errors of Coefficients (beta):", se, "\n")
+
+
+##additional part in q4
+# Fit a linear model using lm()
+lm_model <- lm(y ~ x1 + x2 + x3, data = df)
+
+# Extract estimated coefficients (beta)
+beta_lm <- coef(lm_model)
+
+# Extract estimated residual standard deviation parameter (sigma)
+sigma_lm <- summary(lm_model)$sigma
+
+# Print the results
+cat("Estimated Coefficients (beta) from lm():", beta_lm, "\n")
+cat("Estimated Residual Standard Deviation (sigma) from lm():", sigma_lm, "\n")
